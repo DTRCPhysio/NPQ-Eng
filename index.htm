@@ -22,9 +22,9 @@ button:hover { background:#005fcc; }
 <div class="container">
 <h1>Neck Pain Questionnaire (NPQ)</h1>
 <p class="instructions">
-This questionnaire helps us understand how your neck pain affects your daily life.  
-Please answer every section and select ONLY ONE option per question.  
-Question 9 is optional.
+This questionnaire helps us understand how your neck pain affects your daily life.<br>
+Please answer every section and select ONLY ONE option per question.<br>
+Questions 9 and 10 are optional.
 </p>
 
 <form id="npqForm">
@@ -121,8 +121,8 @@ Question 9 is optional.
 <label><input type="radio" name="q9" value="4"> I cannot drive at all due to neck symptoms</label>
 </td></tr>
 
-<!-- 10 -->
-<tr><td>10</td><td>Compared with the last time you answered this questionnaire, your neck pain is:</td>
+<!-- 10 OPTIONAL -->
+<tr><td>10</td><td>Compared with the last time you answered this questionnaire, your neck pain is: (optional)</td>
 <td class="options">
 <label><input type="radio" name="q10" value="0"> Much better</label>
 <label><input type="radio" name="q10" value="1"> Slightly better</label>
@@ -146,7 +146,7 @@ Question 9 is optional.
 function calculateNPQ() {
   let total = 0;
 
-  for (let i = 1; i <= 10; i++) {
+  for (let i = 1; i <= 8; i++) {
     const radios = document.getElementsByName('q' + i);
     let answered = false;
 
@@ -158,8 +158,8 @@ function calculateNPQ() {
       }
     }
 
-    if (!answered && i !== 9) {
-      alert("Please complete all required questions (Question 9 is optional).");
+    if (!answered) {
+      alert("Please complete all required questions (Questions 9 and 10 are optional).");
       return;
     }
   }
