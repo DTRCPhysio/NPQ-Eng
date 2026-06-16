@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Neck Pain Questionnaire (NPQ)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:#f5f5f7; padding:20px; }
 .container { max-width:900px; margin:auto; background:#fff; padding:20px; border-radius:10px; }
@@ -12,30 +13,33 @@ h1 { font-size:1.6rem; margin-top:10px; }
 table { width:100%; border-collapse:collapse; margin-top:1rem; }
 th, td { padding:10px; vertical-align:top; }
 tr:nth-child(even) { background:#fafafa; }
+label { display:block; margin-bottom:4px; }
 button { margin-top:20px; padding:10px 20px; font-size:1rem; border:none; border-radius:5px; background:#007aff; color:#fff; cursor:pointer; }
 button:hover { background:#005fcc; }
 
 .modal { display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.5); }
-.modal-content { background:#fff; margin:10% auto; padding:20px; border-radius:10px; width:90%; max-width:400px; text-align:center; }
+.modal-content { background:#fff; margin:10% auto; padding:20px; border-radius:10px; width:90%; max-width:420px; text-align:center; }
 .close { float:right; font-size:28px; cursor:pointer; }
-.result-score { font-size:1.4rem; font-weight:bold; margin:10px 0; }
+.result-score { font-size:1.3rem; font-weight:bold; margin:10px 0; }
 .small { font-size:0.85rem; color:#555; }
-label { display:block; margin-bottom:4px; }
 </style>
 </head>
 
 <body>
 <div class="container">
+
 <h1>Neck Pain Questionnaire (NPQ)</h1>
 <p class="instructions">
-This questionnaire is designed to find out how your neck pain affects your ability to manage everyday life.
-Please answer each section by ticking the one box that best describes your problem. Questions 9 and 10 are optional.
-The score is reported as a percentage of the maximum score (0–100%).
+This questionnaire helps determine how your neck pain affects daily life.  
+Please select the **one** answer that best describes your condition in the last week.  
+Questions **9 and 10 are optional**.  
+The final score is shown as a **percentage (0–100%)**.
 </p>
 
 <table>
 <tr><th>#</th><th>Question</th><th>Answer</th></tr>
 
+<!-- Q1 -->
 <tr>
 <td>1</td>
 <td>Neck pain intensity</td>
@@ -48,6 +52,7 @@ The score is reported as a percentage of the maximum score (0–100%).
 </td>
 </tr>
 
+<!-- Q2 -->
 <tr>
 <td>2</td>
 <td>Neck pain and sleeping</td>
@@ -60,18 +65,20 @@ The score is reported as a percentage of the maximum score (0–100%).
 </td>
 </tr>
 
+<!-- Q3 -->
 <tr>
 <td>3</td>
-<td>Pins &amp; needles or numbness in the arms at night</td>
+<td>Pins & needles or numbness in the arms at night</td>
 <td>
-<label><input type="radio" name="q3" value="0">I have no pins &amp; needles or numbness at night</label>
-<label><input type="radio" name="q3" value="1">I have occasional pins &amp; needles or numbness at night</label>
-<label><input type="radio" name="q3" value="2">My sleep is regularly disturbed by pins &amp; needles or numbness</label>
-<label><input type="radio" name="q3" value="3">Because of pins &amp; needles I have less than 5 hours sleep in total</label>
-<label><input type="radio" name="q3" value="4">Because of pins &amp; needles or numbness I have less than 2 hours sleep in total</label>
+<label><input type="radio" name="q3" value="0">I have no pins & needles or numbness at night</label>
+<label><input type="radio" name="q3" value="1">I have occasional pins & needles or numbness at night</label>
+<label><input type="radio" name="q3" value="2">My sleep is regularly disturbed by pins & needles or numbness</label>
+<label><input type="radio" name="q3" value="3">Because of pins & needles I have less than 5 hours sleep in total</label>
+<label><input type="radio" name="q3" value="4">Because of pins & needles or numbness I have less than 2 hours sleep in total</label>
 </td>
 </tr>
 
+<!-- Q4 -->
 <tr>
 <td>4</td>
 <td>Duration of symptoms</td>
@@ -84,6 +91,7 @@ The score is reported as a percentage of the maximum score (0–100%).
 </td>
 </tr>
 
+<!-- Q5 -->
 <tr>
 <td>5</td>
 <td>Carrying</td>
@@ -96,9 +104,10 @@ The score is reported as a percentage of the maximum score (0–100%).
 </td>
 </tr>
 
+<!-- Q6 -->
 <tr>
 <td>6</td>
-<td>Reading &amp; watching TV</td>
+<td>Reading & watching TV</td>
 <td>
 <label><input type="radio" name="q6" value="0">I can do this as long as I wish with no problems</label>
 <label><input type="radio" name="q6" value="1">I can do this as long as I wish, if I'm in a suitable position</label>
@@ -108,6 +117,7 @@ The score is reported as a percentage of the maximum score (0–100%).
 </td>
 </tr>
 
+<!-- Q7 -->
 <tr>
 <td>7</td>
 <td>Working / Housework</td>
@@ -120,6 +130,7 @@ The score is reported as a percentage of the maximum score (0–100%).
 </td>
 </tr>
 
+<!-- Q8 -->
 <tr>
 <td>8</td>
 <td>Social activities</td>
@@ -132,6 +143,7 @@ The score is reported as a percentage of the maximum score (0–100%).
 </td>
 </tr>
 
+<!-- Q9 optional -->
 <tr>
 <td>9</td>
 <td>Driving (optional)</td>
@@ -144,9 +156,10 @@ The score is reported as a percentage of the maximum score (0–100%).
 </td>
 </tr>
 
+<!-- Q10 optional -->
 <tr>
 <td>10</td>
-<td>Compared with the last time you answered this questionnaire, your neck pain is: (optional)</td>
+<td>Compared with the last time you answered this questionnaire, your neck pain is:</td>
 <td>
 <label><input type="radio" name="q10" value="0">Much better</label>
 <label><input type="radio" name="q10" value="1">Slightly better</label>
@@ -159,6 +172,7 @@ The score is reported as a percentage of the maximum score (0–100%).
 </table>
 
 <button onclick="openPassword()">Show to therapist</button>
+
 </div>
 
 <!-- Modal -->
@@ -174,61 +188,15 @@ The score is reported as a percentage of the maximum score (0–100%).
 
     <div id="resultSection" style="display:none;">
       <h3>Result</h3>
-      <p class="result-score">NPQ percentage score: <span id="npqScore"></span></p>
-      <p class="small">(Items 1–8: Total score ÷ 32 × 100)</p>
+      <p class="result-score">NPQ Percentage Score: <span id="npqScore"></span></p>
+      <p class="small">(Items 1–8: Total ÷ 32 × 100)</p>
     </div>
+
   </div>
 </div>
 
 <script>
 function openPassword(){
-  document.getElementById("resultModal").style.display = "block";
-}
+  document.getElementById("resultModal").style.display
 
-function closeModal(){
-  document.getElementById("resultModal").style.display = "none";
-  document.getElementById("passwordSection").style.display = "block";
-  document.getElementById("resultSection").style.display = "none";
-  document.getElementById("pwdInput").value = "";
-}
-
-function verifyPassword(){
-  const pwd = document.getElementById("pwdInput").value;
-  if (pwd !== "225500"){
-    alert("Wrong password");
-    return;
-  }
-  calculateNPQ();
-  document.getElementById("passwordSection").style.display = "none";
-  document.getElementById("resultSection").style.display = "block";
-}
-
-function calculateNPQ(){
-  let total = 0;
-  let answeredAll = true;
-
-  for (let i = 1; i <= 8; i++){
-    const radios = document.getElementsByName("q" + i);
-    let answered = false;
-    for (const r of radios){
-      if (r.checked){
-        total += Number(r.value);
-        answered = true;
-      }
-    }
-    if (!answered) answeredAll = false;
-  }
-
-  if (!answeredAll){
-    alert("Please complete questions 1–8 to calculate the score.");
-    return;
-  }
-
-  const percentage = (total / 32) * 100;
-  document.getElementById("npqScore").textContent = percentage.toFixed(1) + "%";
-}
-</script>
-
-</body>
-</html>
 
